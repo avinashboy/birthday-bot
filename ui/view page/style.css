@@ -1,0 +1,129 @@
+html {
+display: grid;
+min-height: 100%;
+overflow: scroll;
+overflow-x: hidden;
+-ms-overflow-style: none;
+scrollbar-width: none;  
+}
+
+html::-webkit-scrollbar {
+display: none;
+}
+
+body {
+display: grid;
+background: #333;
+
+}
+
+.main {
+position: relative;
+margin: auto;
+overflow: hidden;
+width: 850px;
+height: 480px;
+}
+
+.demo {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+margin-top: .5em;
+font-size: .75em;
+text-transform: capitalize;
+letter-spacing: 3px;
+color: #f6f4f3;
+align-items: center;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+margin-top: 2em;
+font-size: 2em;
+text-transform: uppercase;
+letter-spacing: 3px;
+color: #f6f4f3;
+}
+h1 sup {
+text-transform: lowercase;
+color: #ff3e41;
+}
+
+#countdown {
+color: #f6f4f3;
+text-align: center;
+text-transform: uppercase;
+font-family: 'Lato', sans-serif;
+font-size: 0.7em;
+letter-spacing: 5px;
+margin-top: 5%;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds,
+.left {
+display: inline-block;
+padding: 10px 20px;
+width: 120px;
+border-radius: 10px;
+}
+
+.days {
+background: #d87200;
+}
+
+.hours {
+background: #ff3e41;
+}
+
+.minutes {
+background: #ffb20c;
+}
+
+.seconds {
+background: #2186ff;
+}
+
+.left {
+background: #e10a0a;
+}
+.c-number {
+font-family: 'Montserrat', sans-serif;
+color: #333;
+font-size: 5em;
+}
+
+/* Add
+*/
+.demo a{
+text-transform: uppercase;
+font-size: 35px;
+font-weight: 300;
+color: #f6f4f3;
+text-align: center;
+text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+body {
+overflow: hidden;
+}
+.main {
+width: 50%;
+height: 100%;
+display: flex;
+flex-flow: column;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds,
+.left {
+margin: 5px;
+padding: 10px 20px;
+}
+}

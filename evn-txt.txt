@@ -1,0 +1,13 @@
+DB_CONNECT = <DB url>
+
+KEY = < key >
+
+PASSWORD = < password >
+
+TOKEN = < token >
+
+FROM =< from mail id >
+
+TO = < to mail id >
+
+MAILPASSWORD = < password >
