@@ -141,7 +141,7 @@ function miniTable(array) {
 function deleteRow(idDelete) {
   const [tempDelete, tempIndex] = idDelete.id.split("&#&")
   const headers = head()
-  axios.delete(`${url}forIndex/${tempDelete}`, { headers: headers }).then(res => res.status === 200 ? alert("success", "Delete") : alert("danger", "Please try again")).catch(err => alert("danger", err))
+  axios.delete(`${url}forIndex/${tempDelete}`, { headers: headers }).then(res => res.status === 200 ? alert("success", `Delete index is {tempIndex}`) : alert("danger", "Please try again")).catch(err => alert("danger", err))
   $('#tableBook').on('click', '.deleteMe', function (e) {
     $(this).closest('tr').remove()
     tempData.splice((tempIndex - 1), 1)
