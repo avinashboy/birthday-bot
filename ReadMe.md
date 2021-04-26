@@ -5,7 +5,8 @@
 - if you enable two factor authentication just go to the <a href="https://accounts.google.com/signin/v2/challenge/pwd?continue=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords&service=accountsettings&osid=1&rart=ANgoxceliHH3i_yNpwxnNB7Ssvy8wRprr4l6VYxYl77f123oW1xGZMWIvqLUE8VZufTeofV_pfb4kZzinEu37maKdDx4hzl-DQ&TL=AM3QAYYePb_smzztW-pnHuNmNY59Qx4wEO6qehioGMNtHUPW-Vr0qGHaLoOldIsv&flowName=GlifWebSignIn&cid=1&flowEntry=ServiceLogin">Google app password</a>. 
 
 ### Feature
-- In admin page you should login first in return it will give jwt token. wWith this token create, read and delete. 
+- In admin page you should login first in return it will give json web token (JWT).With this token create, read and delete. 
+- Every month of the first day you will be receiving a mail (At 00:00 on day-of-month 1) with your friend's birthday list.
 
 
 ### tech stack
