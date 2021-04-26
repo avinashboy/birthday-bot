@@ -26,7 +26,6 @@ Here is the link to download zip 👉
 - Open the folder in VS Code
 - RUN <code>npm install</code> , this command pulls out all the require node modules
 - RUN <code>npm start</code>, this command will start your server in localhost <a href="http://localhost:3333">http://localhost:3333</a>
----
 
 ## Screenshots:
 *./ui/view page/index*
