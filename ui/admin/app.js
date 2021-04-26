@@ -129,7 +129,7 @@ function miniTable(array) {
     row.appendChild(td)
 
     td = document.createElement('td');
-    td.innerHTML = `<button type="button" class="btn btn-outline-danger deleteMe" onclick="deleteRow(this)" id="${element._id}&#&${index}"><i class="fas fa-trash"></i></button>`
+    td.innerHTML = `<button type="button" class="btn btn-outline-danger deleteMe" onclick="deleteRow(this)" id="${element._id}&#&${index}&#&${element.name}"><i class="fas fa-trash"></i></button>`
     row.appendChild(td)
 
     document.getElementById("tableBook").children[1].appendChild(row)
@@ -139,9 +139,9 @@ function miniTable(array) {
 }
 
 function deleteRow(idDelete) {
-  const [tempDelete, tempIndex] = idDelete.id.split("&#&")
+  const [tempDelete, tempIndex, tempName] = idDelete.id.split("&#&")
   const headers = head()
-  axios.delete(`${url}forIndex/${tempDelete}`, { headers: headers }).then(res => res.status === 200 ? alert("success", `Delete index is {tempIndex}`) : alert("danger", "Please try again")).catch(err => alert("danger", err))
+  axios.delete(`${url}forIndex/${tempDelete}`, { headers: headers }).then(res => res.status === 200 ? alert("success", `{tempName} deleted`) : alert("danger", "Please try again")).catch(err => alert("danger", err))
   $('#tableBook').on('click', '.deleteMe', function (e) {
     $(this).closest('tr').remove()
     tempData.splice((tempIndex - 1), 1)
