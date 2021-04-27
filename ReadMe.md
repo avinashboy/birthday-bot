@@ -6,7 +6,7 @@
 
 ### Feature
 - In admin page you should login first in return it will give json web token (JWT).With this token create, read and delete. 
-- Every month of the first day you will be receiving a mail (At 07:30 on day-of-month 1) with your friend's birthday list.
+- Every month of the first day you will be receiving a mail (At 07:30 AM on day-of-month 1) with your friend's birthday list.
 
 
 ### tech stack
