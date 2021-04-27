@@ -34,7 +34,7 @@ app.use("/brithCounter", brithCounter)
 app.use("/login", auth)
 app.use("/forIndex", forIndex)
 
-nodeSchedule.scheduleJob('0 0 1 * *', () => {
+nodeSchedule.scheduleJob('30 7 1 * *', () => {
   let str = ""
   getName().then(info => {
     if (info.length === 0) return str = "No brithday for this month", sendMail(str)
