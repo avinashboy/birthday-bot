@@ -33,7 +33,7 @@ function infoMe() {
   const month = !validator.isEmpty(cleanInput($("#month").val())) ? cleanInput($("#month").val()).split("-")[0] : alert("danger", "Please enter the month")
   const descriptionHead = !validator.isEmpty(cleanInput($("#descriptionHead").val())) ? cleanInput($("#descriptionHead").val()) : "Nil"
   const titleHead = `${month.slice(0, 3)} |`
-  const mainHead = `${day}<sup>th</sup> Of ${month}`
+  const mainHead = `${day}<sup>${getOrdinal(day)}</sup> Of ${month}`
   const createdAt = moment().format('LLL');
   if (month === "Open this select menu") return alert("danger", "Please choice month")
   const payLoad = { name, titleHead, descriptionHead, createdAt, mainHead, baseTime: day, month: cleanInput($("#month").val()).split("-").pop() }
@@ -41,6 +41,11 @@ function infoMe() {
   if (checkMonthAndDay(Number(cleanInput($("#month").val()).split("-").pop()), Number(day))) return axios.post(`${url}forIndex`, payLoad, { headers: headers }).then(res => res.status === 201 ? cleanUp(res.data) : alert("danger", "Please try again")).catch(err => alert("danger", err))
   return alert("danger", "Please check properly")
 }
+
+function getOrdinal(day){
+      var a = day % 10;
+      return (1 == ~~(day % 100 / 10) ? "th" : 1 === a ? "st" : 2 === a ? "nd" : 3 === a ? "rd" : "th")
+    }
 
 function checkMonthAndDay(tempMonth, tempDay) {
   let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], year = (new Date()).getFullYear();
