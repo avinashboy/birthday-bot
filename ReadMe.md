@@ -33,7 +33,7 @@ Here is the link to download zip 👉
 ![view page](/screenshot/1.png)
 
 ### admin page
-*./ui/admin page/index*
+*./ui/admin/index*
 ![admin page](/screenshot/2.png)
 
 
