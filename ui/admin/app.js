@@ -170,6 +170,7 @@ function clickHappend() {
 }
 
 function checkCurrentList() {
+  $('.small-info').empty()
   axios.get(`${url}brithCounter`).then(res => {
     res.data.sort((a, b) => {
       if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
@@ -180,7 +181,7 @@ function checkCurrentList() {
     outerDiv.setAttribute('class', 'row')
     const h5 = document.createElement('h5')
     h5.innerText = "Current birth list"
-    if (res.data.length === 0) h5.innerText = "No current birthday"
+    if (res.data.length === 0) h5.innerText = "No current birthday list"
     const innerDiv = document.createElement('div')
     innerDiv.setAttribute('class', 'col-sm-4 mt-3 mb-3')
     const ul = document.createElement('ul')
