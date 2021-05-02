@@ -20,10 +20,9 @@ axios.get(url).then(res => {
       basicInit(res.data[0], currentData[currentData.length - 1])
     }
     else if ((+res.data[i].baseTime) === (+res.data[i + 1].baseTime)) {
-      tempArr.push(res.data[i].name)
-      tempArr.push(res.data[i + 1].name)
-      res.data[i].name = ""
-      res.data[i].name = tempArr.filter(function (item, pos) { return tempArr.indexOf(item) == pos; }).join(",")
+      tempArr.push(res.data[i].id)
+      tempArr.push(res.data[i+1].id)
+      res.data[i].name = getNames(tempArr.filter(function(item, pos) {return tempArr.indexOf(item) == pos;}), res.data).join(",")
       res.data[i].descriptionHead = "Nil"
       basicInit(res.data[i], currentData[currentData.length - 1])
     } else if ((+res.data[i].baseTime) !== (+res.data[i + 1].baseTime)) {
@@ -34,18 +33,18 @@ axios.get(url).then(res => {
 
 }).catch(err => alert("danger", err))
 
-Array.prototype.getDuplicates = function () {
-  var duplicates = [];
-  for (var i = 0; i < this.length; i++) {
-    if (duplicates.hasOwnProperty(this[i])) {
-      duplicates[this[i]].push(i);
-    } else if (this.lastIndexOf(this[i]) !== i) {
-      duplicates[this[i]] = [i];
+function getNames(arr,data){
+  let tempArray = []
+  for(let i = 0; i< arr.length ; i++){
+    for(let j = 0 ; j< data.length; j++){
+      if(arr[i] === data[j].id){
+        console.log(data[j])
+        tempArray.push(data[j].name)
+      }
     }
   }
-
-  return duplicates;
-};
+  return tempArray
+}
 
 function basicInit(xData, year) {
   let { titleHead, descriptionHead, mainHead, baseTime, month, name } = xData
