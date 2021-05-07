@@ -54,7 +54,7 @@ nodeSchedule.scheduleJob('0 0 * * *', () => {
   getTodayName().then(info => {
     if (info.length === 0) return
     info.forEach(Element => {
-      str += `<li>${Element.name} day is ${Element.baseTime}</li>\n`
+      str += `<li>${Element.name} bday</li>\n`
     })
     let template = `
     <p>Today birthday list and wishes them...ps</p>
