@@ -18,12 +18,26 @@
 #### PROCEDURE:
 - Download the zip folder from Github and unzip it
 Here is the link to download zip 👉
-<a href='https://github.com/avinashboy/timer'>HERE</a>
+<a href='https://github.com/avinashboy/birthday-bot'>HERE</a>
 - create an account in <a href="https://www.mongodb.com/try">Mongodb Atlas</a> and create clusters.
 - after create clusters click collect and choose **connect your application** copy the db url
 - This your db url `mongodb+srv://<Name>:<password>@cluster0.qsj4t.mongodb.net/<Dbname>?retryWrites=true&w=majority`
-- create file in the this dir  *cd timer/ && makdir .evn* .
-- In .evn file you have type 7 fields check env-txt file
+- create file in the this dir  *cd birthday-bot/ && makdir .evn*. In .evn file you have type 7 fields check env-txt file
+```
+DB_CONNECT = <DB url>
+
+KEY = < key >
+
+PASSWORD = < password >
+
+TOKEN = < token >
+
+FROM =< from mail id >
+
+TO = < to mail id >
+
+MAILPASSWORD = < password >
+```
 - Open the folder in VS Code
 - RUN <code>npm install</code> , this command pulls out all the require node modules
 - RUN <code>npm start</code>, this command will start your server in localhost <a href="http://localhost:3333">http://localhost:3333</a>
