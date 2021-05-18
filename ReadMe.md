@@ -8,7 +8,7 @@
 - In admin page you should login first in return it will give json web token (JWT).With this token create, read and delete. 
 - Every month of the first day you will be receiving a mail (At 00:00 on day-of-month 1) with your friend's birthday list.
 - It will send mail if the is any birthday or otherwise it won't send any mail (*Note:* On the day only).
-- Zero down time i use cluster module in **Rest API**
+- It has **Zero down time**, I use cluster module in **Rest API**
 
 
 ### tech stack
@@ -44,12 +44,12 @@ MAILPASSWORD = < password >
 - RUN <code>npm start</code>, this command will start your server in localhost <a href="http://localhost:3333">http://localhost:3333</a>
 
 ## Screenshots:
-*./ui/view page/index*
+*./ui/view page/index* - Timer page
 ### view page
 ![view page](/screenshot/1.png)
 
 ### admin page
-*./ui/admin/index*
+*./ui/admin/index* - Admin page
 ![admin page](/screenshot/2.png)
 
 
