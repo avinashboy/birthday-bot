@@ -1,4 +1,4 @@
-# Timer
+# Birthday bot
 
 
 ### Important notes
