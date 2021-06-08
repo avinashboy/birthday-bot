@@ -8,7 +8,7 @@
 - In admin page you should login first in return it will give json web token (JWT).With this token create, read and delete. 
 - Every month of the first day you will be receiving a mail (At 00:00 on day-of-month 1) with your friend's birthday list.
 - It will send mail if the is any birthday or otherwise it won't send any mail (*Note:* On the day only).
-- It has **Zero down time**, I use cluster module in **Rest API**
+- It has **Zero down time**, I use cluster module in **Rest API** (*Note:* Don't use it in heroku cloud)
 
 
 ### tech stack
