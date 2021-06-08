@@ -45,10 +45,61 @@ mongoose.connect(
   useNewUrlParser: true
 }, () => console.log(`connect to the db`));
 
+// If you want use cluster module uncomment this code
+
+// if (cluster.isMaster) {
+//   console.log(`master node id ${process.pid}`)
+//   nodeSchedule.scheduleJob('0 0 1 * *', () => {
+//     let str = ""
+//     getName().then(info => {
+//       if (info.length === 0) return str = "No brithday for this month", sendMail(str)
+//       info.forEach(Element => {
+//         str += `<li>${Element.name} day is ${Element.baseTime}</li>\n`
+//       })
+//       let template = `
+//       <p>This birthday list</p>
+//       <ul>${str}</ul>
+//       `
+//       return sendMail(template)
+//     })
+//   })
+
+//   nodeSchedule.scheduleJob('0 0 * * *', () => {
+//     let str = ""
+//     getTodayName().then(info => {
+//       if (info.length === 0) return
+//       info.forEach(Element => {
+//         str += `<li>${Element.name} bday</li>\n`
+//       })
+//       let template = `
+//       <p>Today birthday list and wishes them...ps</p>
+//       <ul>${str}</ul>
+//       `
+//       return sendMail(template)
+//     })
+//   })
+
+//   nodeSchedule.scheduleJob(' */10 * * * *', () => {
+//     return callMe()
+//   })
 
 
-if (cluster.isMaster) {
-  console.log(`master node id ${process.pid}`)
+//   for (let i = 0; i < numCpu; i++) {
+//     cluster.fork()
+//   }
+//   cluster.on('online', function (worker) {
+//     console.log('Worker ' + worker.process.pid + ' is online');
+//   });
+
+//   cluster.on('exit', function (worker, code, signal) {
+//     console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+//     console.log('Starting a new worker');
+//     cluster.fork();
+//   });
+// } else {
+//   app.listen(port, () => console.log(`server in running`))
+// }
+
   nodeSchedule.scheduleJob('0 0 1 * *', () => {
     let str = ""
     getName().then(info => {
@@ -83,19 +134,4 @@ if (cluster.isMaster) {
     return callMe()
   })
 
-
-  for (let i = 0; i < numCpu; i++) {
-    cluster.fork()
-  }
-  cluster.on('online', function (worker) {
-    console.log('Worker ' + worker.process.pid + ' is online');
-  });
-
-  cluster.on('exit', function (worker, code, signal) {
-    console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
-    console.log('Starting a new worker');
-    cluster.fork();
-  });
-} else {
-  app.listen(port, () => console.log(`server in running`))
-}
+app.listen(port, () => console.log(`server in running on ${port}`))
