@@ -30,7 +30,7 @@ DB_CONNECT = <DB url>
 
 KEY = < key >
 
-PASSWORD = < password >
+PASSWORD = < password to your application >
 
 TOKEN = < token >
 
@@ -38,7 +38,7 @@ FROM =< from mail id >
 
 TO = < to mail id >
 
-MAILPASSWORD = < password >
+MAILPASSWORD = < mail password >
 ```
 - Open the folder in VS Code
 - RUN <code>npm install</code> , this command pulls out all the require node modules
